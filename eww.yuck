@@ -1,0 +1,32 @@
+;; ~/.config/eww/eww.yuck
+
+
+
+
+
+;; Main eww configuration file - MENU ONLY VERSION
+
+;; ===== VARIABLES =====
+(defvar audio_hover false)
+
+;; ===== POLLS =====
+;; Update time every second (for menu if needed)
+(defpoll time :interval "1s" "date '+%I:%M %p | %e %b %Y' | sed 's/  / /g'")
+
+;; Get username once
+(defpoll username :interval "3600s" "whoami")
+
+;; Music information polls (for menu)
+(defpoll MUSIC_TITLE :interval "2s" "scripts/music/music.sh --title")
+(defpoll MUSIC_ARTIST :interval "2s" "scripts/music/music.sh --artist")
+(defpoll MUSIC_STATUS :interval "1s" "scripts/music/music.sh --status")
+
+;; System information polls (for menu system info)
+(defpoll cpu_usage :interval "2s" "scripts/menu/system-info/get_cpu.sh")
+(defpoll ram_usage :interval "2s" "scripts/menu/system-info/get_ram.sh") 
+(defpoll disk_usage :interval "10s" "scripts/menu/system-info/get_disk.sh")
+(defpoll network_speed :interval "30s" "scripts/menu/system-info/get_network_speed.sh")
+
+;; ===== INCLUDES - MENU ONLY =====
+(include "widgets/menu/menu.yuck")
+(include "./widgets/calendar/calendar.yuck")

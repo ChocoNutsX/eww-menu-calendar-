@@ -1,0 +1,17 @@
+;; REMOVE the bar window definition - keep only menu
+;; Comment out or delete this entire section:
+;; (defwindow bar ...)
+;; (defwidget bar_layout ...)
+
+;; KEEP the menu window (this stays)
+(defwindow menu_popup
+  :monitor 0
+  :stacking "overlay"
+  :windowtype "dialog"
+  :wm-ignore true
+  :geometry (geometry :x "10px"
+                      :y "35px"
+                      :width "320px"
+                      :height "480px"
+                      :anchor "top left")
+  (menu_container))
