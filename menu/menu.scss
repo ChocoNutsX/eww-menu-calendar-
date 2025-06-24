@@ -1,0 +1,182 @@
+// ~/.config/eww/widgets/menu/menu.scss  
+// GTK-compatible styling for EWW menu popup
+
+// ===== GLOBAL MENU STYLES =====
+* {
+  all: unset;
+  font-family: "JetBrains Mono";
+  font-size: 14px;
+}
+
+// ===== MAIN MENU CONTAINER =====
+.menu_popup {
+  background-color: rgba(30, 30, 46, 0.95);
+  border-radius: 16px;
+  border: 1px solid rgba(205, 214, 244, 0.2);
+  padding: 20px;
+  color: #cdd6f4;
+}
+
+// ===== TOP SECTION =====
+.menu_top {
+  margin-bottom: 16px;
+}
+
+// ===== PROFILE SECTION =====
+.menu_profile {
+  margin-right: 16px;
+}
+
+.profile_pic {
+  background-color: rgba(49, 50, 68, 0.6);
+  border-radius: 40px;
+  margin-bottom: 8px;
+  border: 2px solid rgba(137, 180, 250, 0.3);
+}
+
+.profile_icon {
+  font-size: 36px;
+  color: #89b4fa;
+}
+
+.username {
+  color: #cdd6f4;
+  font-size: 12px;
+  font-weight: 500;
+  /* REMOVED: text-align: center; - not supported in GTK */
+}
+
+// ===== SECTION TITLES =====
+.section_title {
+  color: #89b4fa;
+  font-weight: bold;
+  font-size: 13px;
+  margin: 16px 0 8px 0;
+  padding-left: 8px;
+  border-left: 3px solid #89b4fa;
+}
+
+// ===== APP BUTTONS =====
+.app_btn {
+  background-color: rgba(49, 50, 68, 0.7);
+  border-radius: 12px;
+  padding: 12px 8px;
+  margin: 4px;
+  color: #cdd6f4;
+  border: 1px solid rgba(69, 71, 90, 0.5);
+  min-width: 60px;
+}
+
+.app_btn:hover {
+  background-color: rgba(137, 180, 250, 0.2);
+  border-color: #89b4fa;
+}
+
+.app_icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.app_name {
+  font-size: 10px;
+  color: #a6adc8;
+  font-weight: 500;
+}
+
+// ===== APPS GRID =====
+.menu_apps_section {
+  margin: 12px 0;
+}
+
+// ===== FOLDERS SECTION =====
+.menu_folders_section {
+  margin: 12px 0;
+}
+
+.folder_btn {
+  background-color: rgba(166, 227, 161, 0.1);
+  border-radius: 12px;
+  padding: 12px 8px;
+  margin: 4px;
+  color: #cdd6f4;
+  border: 1px solid rgba(166, 227, 161, 0.3);
+  min-width: 60px;
+}
+
+.folder_btn:hover {
+  background-color: rgba(166, 227, 161, 0.2);
+  border-color: #a6e3a1;
+}
+
+.folder_icon {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.folder_name {
+  font-size: 10px;
+  color: #a6adc8;
+  font-weight: 500;
+}
+
+// ===== SYSTEM INFO SECTION =====
+.menu_system_section {
+  margin: 12px 0;
+}
+
+.system_item {
+  background-color: rgba(49, 50, 68, 0.4);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 2px;
+  border: 1px solid rgba(116, 199, 236, 0.2);
+}
+
+.system_icon {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.system_label {
+  font-size: 9px;
+  color: #74c7ec;
+  font-weight: 600;
+}
+
+.system_value {
+  font-size: 12px;
+  color: #cdd6f4;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+// ===== POWER OPTIONS =====
+.menu_power_section {
+  margin: 12px 0;
+}
+
+.power_btn {
+  background-color: rgba(243, 139, 168, 0.1);
+  border-radius: 12px;
+  padding: 12px 8px;
+  margin: 4px;
+  color: #cdd6f4;
+  border: 1px solid rgba(243, 139, 168, 0.3);
+  min-width: 60px;
+}
+
+.power_btn:hover {
+  background-color: rgba(243, 139, 168, 0.2);
+  border-color: #f38ba8;
+}
+
+.power_icon {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.power_name {
+  font-size: 10px;
+  color: #a6adc8;
+  font-weight: 500;
+}

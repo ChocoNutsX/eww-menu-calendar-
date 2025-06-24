@@ -1,0 +1,52 @@
+(defwindow calendar
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "300px"
+                      :height "200px"
+                      :anchor "top center")
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  :namespace "eww-calendar"
+  (eventbox :onrightclick "eww close calendar"
+            :onmiddleclick "eww close calendar"
+            :cursor "pointer"
+    (calendar-widget)))
+
+(defwidget calendar-widget []
+  (box :class "calendar-box"
+       :orientation "v"
+       :space-evenly false
+    (box :class "calendar-header"
+         :orientation "h"
+         :space-evenly true
+      (button :class "calendar-button"
+              :onclick "~/.config/eww/scripts/calendar/calendar-nav.sh prev"
+              "󰅁")
+      (button :class "calendar-today-button"
+              :onclick "~/.config/eww/scripts/calendar/calendar-nav.sh reset"
+              :tooltip "Click to go to current month"
+              "${calendar-month} ${calendar-year}")
+      (button :class "calendar-button"
+              :onclick "~/.config/eww/scripts/calendar/calendar-nav.sh next"
+              "󰅂"))
+    (calendar :class "calendar-widget"
+              :day calendar-day
+              :month calendar-month-num
+              :year calendar-year)))
+
+;; Initialize with current date
+(defvar calendar-month-offset 0)
+
+(defpoll calendar-month :interval "1h"
+  "~/.config/eww/scripts/calendar/get-calendar-info.sh month")
+
+(defpoll calendar-month-num :interval "1h"
+  "~/.config/eww/scripts/calendar/get-calendar-info.sh month_num")
+
+(defpoll calendar-year :interval "1h"
+  "~/.config/eww/scripts/calendar/get-calendar-info.sh year")
+
+(defpoll calendar-day :interval "1h"
+  "~/.config/eww/scripts/calendar/get-calendar-info.sh day")
